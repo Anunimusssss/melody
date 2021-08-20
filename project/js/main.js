@@ -3,6 +3,9 @@ $(document).ready(function () {
   var counterUp = $('.counter-up');
   var counterDown = $('.counter-down');
   var floorPath = $('.home-image path');
+  var modalOpen =$('.open-button');
+  var modal = $('.modal');
+  var modalClose = $('.modal-close-button');
 
   floorPath.on('mouseover', function(){
     floorPath.removeClass("current-floor")
@@ -10,6 +13,18 @@ $(document).ready(function () {
 
     $(".counter").text(currentFloor);
 
+  });
+
+  floorPath.on('click', function(){
+    modal.toggleClass('is-open');
+  });
+
+  modalOpen.on('click', function(){
+    modal.toggleClass('is-open');
+  });
+
+  modalClose.on('click', function(){
+    modal.removeClass("is-open");
   });
 
   counterUp.on('click', function(){
@@ -21,7 +36,7 @@ $(document).ready(function () {
     usCurrentFloor=currentFloor.toLocaleString('en-Us', {minimumIntegerDigits: 2, useGrouping: false});
 
     floorPath.removeClass("current-floor");
-    $(".counter").text(usCurrentFloor);
+    $(".counter", ".modal-number").text(usCurrentFloor);
     $(`[data-floor=${usCurrentFloor}]`).toggleClass("current-floor");
 
   }

@@ -4,7 +4,7 @@
   font-family: 'Bebas Neue';
   src: local('Bebas Neue Regular Regular'), local('BebasNeueRegular'),
       url('../fonts/BebasNeueCyrillic.woff') format('woff2'),
-      url('../fonts/BebasNeueCyrillic.woffBebasNeueRegular.woff2') format('woff');
+      url('../fonts/BebasNeueRegular.woff2') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -142,5 +142,113 @@ body{
 }
 
 path.current-floor{
+  opacity: 1;
+}
+
+.modal{
+  position: fixed;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.2s;
+}
+
+.is-open{
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-dialog{
+  position: relative;
+  max-width: 1000px;
+  min-height: 565px;
+  background-color: #fff;
+  flex-grow: 1;
+  display: flex;
+}
+
+.modal-image{
+  background-color: #EBEBEB;
+  width:60%;
+  text-align: center;
+  padding: 50px;
+}
+
+.modal-title{
+  font-weight: normal;
+  font-family: 'Bebas Neue';
+  font-size: 24px;
+  line-height: 24px;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.modal-counter{
+  font-family: 'Bebas Neue';
+}
+
+.modal-info{
+  width: 40%;
+  padding: 50px 46px;
+}
+
+.flat-list{
+  padding: 0;
+  list-style: none;
+  margin-top: 55px;
+}
+
+.flat-link{
+  font-size: 16px;
+  line-height: 19px;
+  text-decoration: none;
+  color: #635854;
+}
+
+.flat-item{
+  margin-bottom: 10px;
+}
+.flat-link:hover{
+  text-decoration-line: underline;
+  color: #3596F5;
+}
+
+.modal-alert{
+  padding-top: 56px;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #635854;
+}
+
+.modal-alert:hover{
+  color: #857671
+}
+
+.modal-close-button{
+  position: absolute;
+  right: 0;
+  top:0;
+  background-color: #fff;
+  border:none;
+  margin-top: 38px;
+  margin-right: 27px;
+  cursor: pointer;
+}
+
+.floor-image path{
+  opacity: 0;
+  cursor:pointer;
+}
+
+.floor-image path:hover{
   opacity: 1;
 }
