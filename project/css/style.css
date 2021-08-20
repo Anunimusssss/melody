@@ -140,3 +140,7 @@ body{
   padding-top: 109px;
   padding-bottom: 116px;
 }
+
+path.current-floor{
+  opacity: 1;
+}
